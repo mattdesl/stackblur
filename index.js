@@ -320,30 +320,4 @@ function BlurStack()
 	this.next = null;
 }
 
-function createBlurredCanvas(img, radius, padding) {
-	var w = img.width,
-		h = img.height;
-
-	padding = (padding===0||padding) ? padding : radius;
-	w += padding;
-	h += padding;
-
-	var canvas = document.createElement("canvas");
-	canvas.width = w;
-	canvas.height = h;
-	var context = canvas.getContext("2d");
-
-	context.drawImage(img, padding/2, padding/2);
-	var imgData = context.getImageData(0, 0, w, h);
-	var pixels = imgData.data;
-
-	blur(pixels, w, h, radius);
-
-	context.putImageData(imgData, 0, 0);
-	return canvas;
-}
-
-module.exports = {
-	blur: blur,
-	createBlurredCanvas: createBlurredCanvas
-};
+module.exports = blur;

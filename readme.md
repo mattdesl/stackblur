@@ -5,6 +5,15 @@ A bare-bones port of Mario Klingemann's stackblur that just operates on a Uint8 
 Original implementation:
 http://www.quasimondo.com/StackBlurForCanvas/StackBlurDemo.html
 
+# API
+
+```
+var stackblur = require('stackblur');
+stackblur( pixels, width, height, radius )
+```
+
+Takes the pixel array (typically Uint8ClampedArray), the width and height of the image, and the radius to blur.
+
 # License (Mario Klingemann)
 
 ```
